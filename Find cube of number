@@ -1,20 +1,37 @@
 #include <stdio.h>
 
-int cube(int num)
-{
-    return num * num * num;
-}
+#define PI 3.14159
 
-int main()
-{
-    int num, cube_num;
+int main() {
+    float radius, diameter, circumference, area;
+    int option;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
 
-    cube_num = cube(num);
+    printf("Enter the option:\n");
+    printf("1. Calculate diameter\n");
+    printf("2. Calculate circumference\n");
+    printf("3. Calculate area\n");
+    scanf("%d", &option);
 
-    printf("The cube of %d is %d\n", num, cube_num);
+    switch(option) {
+        case 1:
+            diameter = 2 * radius;
+            printf("Diameter = %.2f\n", diameter);
+            break;
+        case 2:
+            circumference = 2 * PI * radius;
+            printf("Circumference = %.2f\n", circumference);
+            break;
+        case 3:
+            area = PI * radius * radius;
+            printf("Area = %.2f\n", area);
+            break;
+        default:
+            printf("Invalid option\n");
+            break;
+    }
 
     return 0;
 }
