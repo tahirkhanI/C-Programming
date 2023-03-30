@@ -2,8 +2,12 @@
 
 #define PI 3.14159
 
+float calculateDiameter(float radius);
+float calculateCircumference(float radius);
+float calculateArea(float radius);
+
 int main() {
-    float radius, diameter, circumference, area;
+    float radius, result;
     int option;
 
     printf("Enter the radius of the circle: ");
@@ -17,16 +21,16 @@ int main() {
 
     switch(option) {
         case 1:
-            diameter = 2 * radius;
-            printf("Diameter = %.2f\n", diameter);
+            result = calculateDiameter(radius);
+            printf("Diameter = %.2f\n", result);
             break;
         case 2:
-            circumference = 2 * PI * radius;
-            printf("Circumference = %.2f\n", circumference);
+            result = calculateCircumference(radius);
+            printf("Circumference = %.2f\n", result);
             break;
         case 3:
-            area = PI * radius * radius;
-            printf("Area = %.2f\n", area);
+            result = calculateArea(radius);
+            printf("Area = %.2f\n", result);
             break;
         default:
             printf("Invalid option\n");
@@ -35,3 +39,16 @@ int main() {
 
     return 0;
 }
+
+float calculateDiameter(float radius) {
+    return 2 * radius;
+}
+
+float calculateCircumference(float radius) {
+    return 2 * PI * radius;
+}
+
+float calculateArea(float radius) {
+    return PI * radius * radius;
+}
+
